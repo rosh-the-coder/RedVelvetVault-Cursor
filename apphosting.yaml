@@ -1,5 +1,11 @@
 # Settings for Backend (on Cloud Run).
 # See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+
+# The command to start your server. App Hosting will automatically install
+# dependencies from your package.json and run your build script (if specified)
+# before this command.
+entryPoint: npx serve -s dist -p ${PORT:-8080}
+
 runConfig:
   minInstances: 0
   # maxInstances: 100
